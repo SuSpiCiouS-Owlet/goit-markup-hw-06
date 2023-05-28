@@ -479,6 +479,8 @@ body {
 
 .subscribe-form-subtitle {
   display: block;
+  font-size: 16px;
+  line-height: 1.5;
   color: var(--white-background);
   margin-bottom: 16px;
 }
