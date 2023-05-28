@@ -123,8 +123,7 @@ body {
   color: var(--primary-text-color);
   margin-bottom: 72px;
 }
-.subtitle,
-.subscribe-description {
+.subtitle {
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
@@ -478,18 +477,23 @@ body {
   align-items: end;
 }
 
-.subscribe-form-field-description {
+.subscribe-form-subtitle {
   display: block;
   color: var(--white-background);
   margin-bottom: 16px;
 }
+.subscribe-form-field {
+  margin-right: 24px;
+}
 .subscribe-form-input {
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
   width: 264px;
   height: 40px;
-  padding: 8px 16px;
-  margin-right: 24px;
+  padding-left: 16px;
   color: var(--white-background);
-  background-color: var(--dark-background-color);
+  background-color: transparent;
   border: 1px solid var(--white-background);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
@@ -502,17 +506,16 @@ body {
   justify-content: center;
   align-items: center;
   min-width: 165px;
+  height: 40px;
   font-family: var(--main-font-family);
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.04em;
-  background-color: var(--accent-color);
-  padding: 8px 24px;
   color: var(--white-background);
-  gap: 16px;
-  border: transparent;
+  background-color: var(--accent-color);
+  border: none;
   border-radius: 4px;
   transition: background-color var(--transition-dur-and-time-func);
 }
@@ -522,6 +525,7 @@ body {
 }
 .subscribe-btn-icon {
   fill: var(--white-background);
+  margin-left: 16px;
 }
 /*=================== /FOOTER ======================*/
 
@@ -593,7 +597,7 @@ body {
 }
 /*==================== /PORTFOLIO ====================*/
 
-/*==================== BACKDROP ====================*/
+/*==================== BACKDROP AND MODAL ====================*/
 .backdrop {
   position: fixed;
   top: 0;
@@ -645,9 +649,6 @@ body {
 .modal-close-btn-icon {
   transition: fill var(--transition-dur-and-time-func);
 }
-.contact-form-wrapper {
-  position: relative;
-}
 .modal-subtitle {
   font-style: normal;
   font-weight: 500;
@@ -658,86 +659,78 @@ body {
   color: var(--primary-text-color);
   margin-bottom: 16px;
 }
+.contact-form-wrapper {
+  margin-bottom: 8px;
+}
 .contact-form-field-wrapper {
   display: block;
-  margin-bottom: 8px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: var(--subtle-text);
+  margin-bottom: 4px;
+}
+.contact-form-input-wrapper {
+  position: relative;
 }
 .contact-form-input {
   width: 100%;
   height: 40px;
-  padding: 11px 0 11px 38px;
+  padding-left: 38px;
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
-  outline: none;
+  background-color: transparent;
+  outline: transparent;
   transition: border-color var(--transition-dur-and-time-func);
 }
 
 .contact-form-input:focus {
   border-color: var(--accent-color);
 }
-.contact-form-field-description {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.16;
-  letter-spacing: 0.04em;
-  color: var(--subtle-text);
-}
-.contact-form-field-description {
-  display: block;
-  margin-bottom: 4px;
-}
-
 .contact-form-input-icon {
   position: absolute;
   left: 16px;
-  transform: translateY(110%);
+  top: 50%;
+  transform: translateY(-50%);
   fill: var(--dark-background-color);
   transition: fill var(--transition-dur-and-time-func);
 }
 .contact-form-input:focus + .contact-form-input-icon {
   fill: var(--accent-color);
 }
+.contact-form-comment-wrapper {
+  margin-bottom: 16px;
+}
 .contact-form-comment {
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
-  line-height: 1.16;
+  line-height: 1.17;
   letter-spacing: 0.04em;
-  color: var(--subtle-text);
   width: 100%;
   height: 120px;
   padding: 8px 16px;
+  color: rgba(46, 47, 66, 0.4);
+  background-color: transparent;
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
   resize: none;
-  outline: none;
+  outline: transparent;
   transition: border-color var(--transition-dur-and-time-func);
 }
 .contact-form-comment:focus {
   border-color: var(--accent-color);
 }
-.contact-form-comment::placeholder {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.16;
-  letter-spacing: 0.04em;
-  color: var(--subtle-text);
-}
 .contact-form-checkbox-wrapper {
-  display: block;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.16;
-  letter-spacing: 0.04em;
-  color: var(--subtle-text);
   margin-bottom: 24px;
 }
-.contact-form-checkbox {
-  appearance: none;
-  position: absolute;
+.contact-form-privacy-wrapper {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: var(--subtle-text);
 }
 .custom-policy-checkbox {
   display: inline-flex;
@@ -745,17 +738,15 @@ body {
   align-items: center;
   width: 16px;
   height: 16px;
-  fill: var(--light-text-color);
+  fill: transparent;
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 2px;
 }
-.contact-form-checkbox:checked + .custom-policy-checkbox .contact-form-checkmark,
-.contact-form-checkbox:checked + .custom-policy-checkbox {
-  opacity: 1;
+.contact-form-checkbox:checked + .contact-form-privacy-wrapper .custom-policy-checkbox {
   background-color: var(--next-accent-color);
-}
-.contact-form-checkmark {
-  opacity: 0;
+  border: none;
+  fill: var(--white-background);
+  border-color: var(--next-accent-color);
 }
 .contact-form-checkbox-link {
   color: var(--accent-color);
@@ -770,15 +761,15 @@ body {
   text-align: center;
   letter-spacing: 0.04em;
   min-width: 169px;
+  height: 56px;
   margin-left: auto;
   margin-right: auto;
-  padding: 16px 32px;
   gap: 10px;
   color: var(--white-background);
   background: var(--accent-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
-  border-color: transparent;
+  border: none;
   transition: background-color var(--transition-dur-and-time-func);
 }
 .contact-form-submit-btn:hover,
@@ -790,4 +781,4 @@ body {
   visibility: hidden;
   pointer-events: none;
 }
-/*==================== /BACKDROP ====================*/
+/*==================== /BACKDROP AND MODAL ====================*/
