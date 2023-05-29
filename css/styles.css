@@ -706,6 +706,7 @@ body {
   margin-bottom: 16px;
 }
 .contact-form-comment {
+  display: block;
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -743,6 +744,8 @@ body {
   fill: transparent;
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 2px;
+  cursor: pointer;
+  margin-right: 8px;
 }
 .contact-form-checkbox:checked + .contact-form-privacy-wrapper .custom-policy-checkbox {
   background-color: var(--next-accent-color);
